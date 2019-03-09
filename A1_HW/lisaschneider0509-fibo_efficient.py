@@ -29,7 +29,7 @@ def iterative_fibonacci(n):
 DEBUG = False
 
 if DEBUG:
-    args = parser.parse_args(["-n", "4"])
+    args = parser.parse_args(["-n", "10", "--all"])
     print(args)
 else:
     args = parser.parse_args()
