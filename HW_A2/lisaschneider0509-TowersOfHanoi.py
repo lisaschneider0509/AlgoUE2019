@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-# bei pullrequest ins Kommentarfelt @mtw  please review
 import argparse
 import sys
 
