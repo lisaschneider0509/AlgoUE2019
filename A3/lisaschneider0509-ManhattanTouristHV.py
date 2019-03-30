@@ -64,7 +64,7 @@ if sys.stdin.isatty():  # to avoid getting stuck if no stdin is provided
                     [0.0, 0.7, 0.3, 0.4],
                     [0.3, 0.3, 0.0, 0.2],
                     [0.1, 0.3, 0.2, 0.2]]
-    
+
     matrix_dimension = [len(matrix_down[0]), len(matrix_right)]
 
 else:
