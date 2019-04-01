@@ -29,14 +29,15 @@ def manhattanTouristProblem(weights_down, weights_right, n, m):
     s_dict = {(0, 0): 0}
 
     for i in range(1, n):
-        s_next = weights_down[i-1][0]
+        s_next = s_dict[(i-1, 0)] + weights_down[i-1][0]  # forgot to add the weights to the dict entries
         next_key = (i, 0)
         s_dict.update({next_key: s_next})
 
     for j in range(1, m):
-        s_next = weights_right[0][j-1]
+        s_next = s_dict[(0, j-1)] + weights_right[0][j-1]  # forgot to add the weights to the dict entries
         next_key = (0, j)
         s_dict.update({next_key: s_next})
+
 
     for i in range(1, n):
         for j in range(1, m):
