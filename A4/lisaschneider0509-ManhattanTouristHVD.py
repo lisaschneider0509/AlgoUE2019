@@ -34,12 +34,12 @@ def manhattanTouristProblem(weights_down, weights_right, weights_dia, n, m):
     s_dict = {(0, 0): 0}
 
     for i in range(1, n):
-        s_next = weights_down[i-1][0]
+        s_next = s_dict[(i-1, 0)] + weights_down[i-1][0]
         next_key = (i, 0)
         s_dict.update({next_key: s_next})
 
     for j in range(1, m):
-        s_next = weights_right[0][j-1]
+        s_next = s_dict[(0, j-1)] + weights_right[0][j-1]
         next_key = (0, j)
         s_dict.update({next_key: s_next})
 
@@ -81,6 +81,7 @@ if sys.stdin.isatty():  # to avoid getting stuck if no stdin is provided
 
 else:
     inputString = sys.stdin.readlines()
+    print(inputString)
     start_positions = find_separator(inputString, 'G.*')
     end_positions = find_separator(inputString, '---.*')
 
