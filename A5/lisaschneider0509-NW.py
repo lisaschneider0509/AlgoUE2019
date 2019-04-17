@@ -120,6 +120,7 @@ def highlight_matches(alignment_1, alignment_2):
 
 
 def print_to_clustal(header_list, sequence_list, higlight_string):
+    print("CLUSTAL\n\n")
     if len(header_list[0]) == len(header_list[1]):
         spacer = " " * len(header_list[0])
 
@@ -180,9 +181,8 @@ else:
         matchHighlights = highlight_matches(seqAlign[0], seqAlign[1])
 
         print_to_clustal(header, seqAlign, matchHighlights)
-        print(scoreMatrix, file=sys.stderr)
+        print(scoreMatrix[-1, -1], file=sys.stderr)
 
-        # write_to_clustal(header, seqAlign, matchHighlights)
 
 
 
